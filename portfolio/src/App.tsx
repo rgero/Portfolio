@@ -1,20 +1,14 @@
-import './styles/App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { ProjectList } from './data/dummyProject'
+import Header from './components/Header';
+import ProjectList from './components/ProjectList';
 
 const App = () => {
 
   return (
     <>
-      {ProjectList.map( (entry) => {
-        return (
-          <div>
-            <div>{entry.name}</div>
-            <div>{entry.description}</div>
-            <hr/>
-          </div>
-        )
-      })}
+      <Header/>
+      <ProjectList/>
     </>
   )
 }
