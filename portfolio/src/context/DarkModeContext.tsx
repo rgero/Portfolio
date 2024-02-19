@@ -1,41 +1,45 @@
 /* eslint-disable react/prop-types */
 
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
-import { createContext, useContext, useEffect } from "react";
+import { createContext, useContext, useMemo } from "react";
 
 import { useLocalStorageState } from "../hooks/useLocalStorageState";
 
-const DarkModeContext = createContext();
-
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
+const DarkModeContext = createContext({
+  isDarkMode: false,
+  toggleDarkMode: () => {}
 });
 
-const lightTheme = createTheme({
-  palette: {
-    mode: 'light',
-  },
-})
-
-const DarkModeProvider = ({ children }) => {
+const DarkModeProvider = ({ children }: {children: React.ReactNode}) => {
   const [isDarkMode, setIsDarkMode] = useLocalStorageState(
     window.matchMedia("(prefers-color-scheme: dark)").matches,
     "isDarkMode"
   );
 
-  useEffect(
-    function () {
-      if (isDarkMode) {
-        document.documentElement.classList.add("dark-mode");
-        document.documentElement.classList.remove("light-mode");
-      } else {
-        document.documentElement.classList.add("light-mode");
-        document.documentElement.classList.remove("dark-mode");
-      }
-    },
-    [isDarkMode]
+  const mode = isDarkMode ? "dark" : "light";
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode,
+        },
+        transitions: {
+          duration: {
+            shortest: 150,
+            shorter: 200,
+            short: 250,
+            // most basic recommended timing
+            standard: 300,
+            // this is to be used in complex animations
+            complex: 375,
+            // recommended when something is entering screen
+            enteringScreen: 225,
+            // recommended when something is leaving screen
+            leavingScreen: 195,
+          },
+        },
+      }),
+    [mode]
   );
 
   const toggleDarkMode = () => {
@@ -43,8 +47,8 @@ const DarkModeProvider = ({ children }) => {
   }
 
   return (
-    <DarkModeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
-      <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+    <DarkModeContext.Provider value={{isDarkMode, toggleDarkMode}}>
+      <ThemeProvider theme={theme}>
         <CssBaseline/>
         {children}
       </ThemeProvider>
