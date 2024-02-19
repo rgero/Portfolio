@@ -1,25 +1,29 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import CssBaseline from '@mui/material/CssBaseline';
-import Header from './components/Header';
-import ProjectList from './components/ProjectList';
-
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
-});
+import AppLayout from './ui/AppLayout';
+import { DarkModeProvider } from './context/DarkModeContext';
+import ProjectListPage from './pages/ProjectListPage';
 
 const App = () => {
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <CssBaseline />
-      <Header/>
-      <ProjectList/>
-    </ThemeProvider>
+    <DarkModeProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={
+            <AppLayout/>
+          }>
+            <Route index element={<ProjectListPage/>}/>
+            <Route path='/about' element={<ProjectListPage/>} />
+            <Route path="/projects" element={<ProjectListPage/>}/>
+            <Route path="/resume" element={<ProjectListPage/>}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+
+    </DarkModeProvider>
   )
 }
 
