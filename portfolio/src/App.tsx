@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import AboutPage from './pages/AboutPage';
 import AppLayout from './ui/AppLayout';
 import { DarkModeProvider } from './context/DarkModeContext';
 import ProjectListPage from './pages/ProjectListPage';
@@ -16,7 +17,7 @@ const App = () => {
             <AppLayout/>
           }>
             <Route index element={<ProjectListPage/>}/>
-            <Route path='/about' element={<ProjectListPage/>} />
+            <Route path='/about' element={<AboutPage/>} />
             <Route path="/projects" element={<ProjectListPage/>}/>
             <Route path="/resume" element={<ProjectListPage/>}/>
           </Route>

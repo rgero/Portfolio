@@ -40,9 +40,6 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
 const ProjectList = () => {
   return (
     <Container>
-      <Box sx={{ paddingY: 2, width: '100%', maxWidth: 500 }}>
-        <Typography variant='h3'>Projects</Typography>
-      </Box>
       {DummyProjects.map( (entry, index) => (
         <Accordion
           slotProps={{ transition: { timeout: 600 } }}
