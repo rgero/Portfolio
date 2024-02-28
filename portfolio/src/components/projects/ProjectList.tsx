@@ -1,10 +1,11 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
 import MuiAccordionSummary, {AccordionSummaryProps} from '@mui/material/AccordionSummary';
 
 import AccordionDetails from '@mui/material/AccordionDetails';
-import { ProjectList as DummyProjects } from '../data/dummyProject';
+import { ProjectList as DummyProjects } from '../../data/dummyProject';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ProjectDescription from './ProjectDescription';
 import { styled } from '@mui/material/styles';
 
 const Accordion = styled((props: AccordionProps) => (
@@ -48,10 +49,17 @@ const ProjectList = () => {
             aria-controls={`panel${index}-content`}
             id={`panel${index}-header`}
           >
-            {entry.name}
+            <Grid container justifyContent="space-between">
+              <Grid item>
+                {entry.name}
+              </Grid>
+              <Grid item>
+                Tags: {entry.tags.join(', ')}
+              </Grid>
+            </Grid>
           </AccordionSummary>
           <AccordionDetails>
-            {entry.description}
+            <ProjectDescription project={entry}/>
           </AccordionDetails>
         </Accordion>
       ))}

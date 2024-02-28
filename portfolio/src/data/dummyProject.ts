@@ -1,12 +1,4 @@
-type Project = {
-  id: number,
-  name: string,
-  repo: string,
-  website: string,
-  media: string[],
-  tags: string[],
-  description: string
-}
+import { Project } from "../interfaces/Project";
 
 export const ProjectList: Project[] = [
   {
@@ -32,7 +24,12 @@ export const ProjectList: Project[] = [
     name: "Ling Hotel",
     repo: "https://github.com/rgero/LingHotel",
     website: "https://ling-hotel.vercel.app/login",
-    media: [],
+    media: [
+      { 
+        type: 'image',
+        url: './images/linghotel/logo-dark.png'
+      }
+    ],
     tags: ['react', 'course'],
     description: "This was the final project for a React course I took to expand my knowledge on React."
   },

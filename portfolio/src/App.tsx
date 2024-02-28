@@ -17,8 +17,8 @@ const App = () => {
             <AppLayout/>
           }>
             <Route index element={<ProjectListPage/>}/>
-            <Route path='/about' element={<AboutPage/>} />
             <Route path="/projects" element={<ProjectListPage/>}/>
+            <Route path='/about' element={<AboutPage/>} />
             <Route path="/resume" element={<ProjectListPage/>}/>
           </Route>
         </Routes>

@@ -1,6 +1,6 @@
 import { Container } from '@mui/material';
 import PageHeader from '../ui/PageHeader';
-import ProjectList from '../components/ProjectList';
+import ProjectList from '../components/projects/ProjectList';
 
 const ProjectListPage = () => {
 
