@@ -1,4 +1,4 @@
-import { Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material"
+import { Card, CardActionArea, CardContent, CardMedia, Typography, useMediaQuery } from "@mui/material"
 
 import { Media } from "../../interfaces/Media"
 import MediaModal from "./MediaModal";
@@ -15,13 +15,32 @@ const MediaCard: React.FC<Props> = ({media}) => {
 
   const closeModal = () => setModalOpen(false);
 
-  const constructURL = media.type === "image" ? media.url : YouTubeParser(media.url)
+  const constructURL: string = media.type === "image" ? media.url : YouTubeParser(media.url)
 
-  return (
-    <>
-      <MediaModal isOpen={isModalOpen} closeModal={closeModal} media={media}/>
+  const onMobile = useMediaQuery('(max-width:600px)');
+
+  // This feels like a hack.
+  let cardJSX = (
+    <Card sx={{width: 300, maxHeight: 500, minHeight: 300}}>
+      <CardActionArea onClick={() => setModalOpen(true)}> 
+        <CardMedia
+          component="img"
+          src={constructURL}
+          height="200"
+          sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+        />
+        <CardContent>
+          <Typography>{media.description}</Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+  )
+
+  if (onMobile && media.type=="video")
+  {
+    cardJSX = (
       <Card sx={{width: 300, maxHeight: 500, minHeight: 300}}>
-        <CardActionArea onClick={() => setModalOpen(true)}> 
+        <CardActionArea href={`https://www.youtube.com/watch?v=${media.url}`}> 
           <CardMedia
             component="img"
             src={constructURL}
@@ -33,6 +52,13 @@ const MediaCard: React.FC<Props> = ({media}) => {
           </CardContent>
         </CardActionArea>
       </Card>
+    )
+  }
+
+  return (
+    <>
+      <MediaModal isOpen={isModalOpen} closeModal={closeModal} media={media}/>
+      {cardJSX}
     </>
 
   )
