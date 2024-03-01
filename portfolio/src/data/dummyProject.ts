@@ -65,4 +65,50 @@ export const ProjectList: Project[] = [
     tags: ['react', 'course'],
     description: "This was the final project for a React course I took to expand my knowledge on React."
   },
+  {
+    id: 3,
+    name: "Empty Project",
+    repo: "",
+    website: "",
+    media: [
+      { 
+        title: "Logo for the Ling Hotel",
+        type: 'image',
+        url: 'images/linghotel/logo-dark.png',
+        description: "The Logo for Ling Hotel"
+      },
+      { 
+        title: "LTT for Video Test",
+        type: 'video',
+        url: 'LfpXMuMvcWQ',
+        description: "This is a dumb video pretending to be for the project"
+      },
+      { 
+        title: "Logo for the Ling Hotel",
+        type: 'image',
+        url: 'images/linghotel/logo-dark.png',
+        description: "The Logo for Ling Hotel"
+      },
+      { 
+        title: "LTT for Video Test",
+        type: 'video',
+        url: 'LfpXMuMvcWQ',
+        description: "This is a dumb video pretending to be for the project"
+      },
+      { 
+        title: "Logo for the Ling Hotel",
+        type: 'image',
+        url: 'images/linghotel/logo-dark.png',
+        description: "The Logo for Ling Hotel"
+      },
+      { 
+        title: "LTT for Video Test",
+        type: 'video',
+        url: 'LfpXMuMvcWQ',
+        description: "This is a dumb video pretending to be for the project"
+      },
+    ],
+    tags: ['react', 'course'],
+    description: "This was the final project for a React course I took to expand my knowledge on React."
+  },
 ]
