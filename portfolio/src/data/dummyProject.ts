@@ -26,33 +26,39 @@ export const ProjectList: Project[] = [
     website: "https://ling-hotel.vercel.app/login",
     media: [
       { 
+        title: "Logo for the Ling Hotel",
         type: 'image',
         url: 'images/linghotel/logo-dark.png',
         description: "The Logo for Ling Hotel"
       },
       { 
+        title: "LTT for Video Test",
         type: 'video',
-        url: 'https://www.youtube.com/embed/LfpXMuMvcWQ',
+        url: 'LfpXMuMvcWQ',
         description: "This is a dumb video pretending to be for the project"
       },
       { 
+        title: "Logo for the Ling Hotel",
         type: 'image',
         url: 'images/linghotel/logo-dark.png',
         description: "The Logo for Ling Hotel"
       },
       { 
+        title: "LTT for Video Test",
         type: 'video',
-        url: 'https://www.youtube.com/embed/LfpXMuMvcWQ',
+        url: 'LfpXMuMvcWQ',
         description: "This is a dumb video pretending to be for the project"
       },
       { 
+        title: "Logo for the Ling Hotel",
         type: 'image',
         url: 'images/linghotel/logo-dark.png',
         description: "The Logo for Ling Hotel"
       },
       { 
+        title: "LTT for Video Test",
         type: 'video',
-        url: 'https://www.youtube.com/embed/LfpXMuMvcWQ',
+        url: 'LfpXMuMvcWQ',
         description: "This is a dumb video pretending to be for the project"
       },
     ],
