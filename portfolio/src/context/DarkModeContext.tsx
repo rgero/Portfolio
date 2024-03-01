@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { createContext, useContext, useMemo } from "react";
 
@@ -12,7 +10,7 @@ const DarkModeContext = createContext({
 
 const DarkModeProvider = ({ children }: {children: React.ReactNode}) => {
   const [isDarkMode, setIsDarkMode] = useLocalStorageState(
-    window.matchMedia("(prefers-color-scheme: dark)").matches,
+    window.matchMedia("(prefers-color-scheme: dark)").matches.toString(),
     "isDarkMode"
   );
 
