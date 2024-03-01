@@ -1,6 +1,8 @@
 import { Box, Container, Typography } from "@mui/material"
 
 import { Media } from "../../interfaces/Media"
+import MediaCard from "../media/MediaCard"
+import MediaContainer from "../media/MediaContainer"
 import { Project } from "../../interfaces/Project"
 
 interface Props {
@@ -15,22 +17,7 @@ const ProjectDescription: React.FC<Props> = ({project}) => {
       <Typography>{project.description}</Typography>
       <Box>
         <Typography>Media</Typography>
-        <Typography>
-        {
-          // This should be a Media Presentation component.
-          project.media.map( (entry: Media, index: number) => {
-            
-            if (entry.type === "image")
-            {
-              return (<img src={entry.url} key={index}/>)
-            } else if (entry.type === "video")
-            {
-              return <Typography>No Videos yet</Typography>
-            }
-            return entry.url;
-          })
-        }
-</Typography>
+        <MediaContainer list={project.media}/>
       </Box>
 
       <Typography>Tags: {project.tags.join(", ")}</Typography>

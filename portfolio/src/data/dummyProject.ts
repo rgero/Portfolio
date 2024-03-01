@@ -27,8 +27,34 @@ export const ProjectList: Project[] = [
     media: [
       { 
         type: 'image',
-        url: './images/linghotel/logo-dark.png'
-      }
+        url: 'images/linghotel/logo-dark.png',
+        description: "The Logo for Ling Hotel"
+      },
+      { 
+        type: 'video',
+        url: 'https://www.youtube.com/embed/LfpXMuMvcWQ',
+        description: "This is a dumb video pretending to be for the project"
+      },
+      { 
+        type: 'image',
+        url: 'images/linghotel/logo-dark.png',
+        description: "The Logo for Ling Hotel"
+      },
+      { 
+        type: 'video',
+        url: 'https://www.youtube.com/embed/LfpXMuMvcWQ',
+        description: "This is a dumb video pretending to be for the project"
+      },
+      { 
+        type: 'image',
+        url: 'images/linghotel/logo-dark.png',
+        description: "The Logo for Ling Hotel"
+      },
+      { 
+        type: 'video',
+        url: 'https://www.youtube.com/embed/LfpXMuMvcWQ',
+        description: "This is a dumb video pretending to be for the project"
+      },
     ],
     tags: ['react', 'course'],
     description: "This was the final project for a React course I took to expand my knowledge on React."
