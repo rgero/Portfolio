@@ -53,9 +53,12 @@ const ProjectList = () => {
               <Grid item>
                 {entry.name}
               </Grid>
-              <Grid item>
-                Tags: {entry.tags.join(', ')}
-              </Grid>
+              {entry.tags.length > 0 && (
+                <Grid item>
+                  Tags: {entry.tags.join(', ')}
+                </Grid>
+              )}
+
             </Grid>
           </AccordionSummary>
           <AccordionDetails>

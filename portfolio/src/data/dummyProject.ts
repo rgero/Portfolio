@@ -16,7 +16,7 @@ export const ProjectList: Project[] = [
     repo: "https://github.com/rgero/ExpenseTracker",
     website: "",
     media: [],
-    tags: ['react native', 'native', 'expense', 'tracking'],
+    tags: [],
     description: "This is the Expense Tracker made in React Native as a result of the course I took on it."
   },
   {

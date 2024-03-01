@@ -1,7 +1,5 @@
 import { Box, Container, Typography } from "@mui/material"
 
-import { Media } from "../../interfaces/Media"
-import MediaCard from "../media/MediaCard"
 import MediaContainer from "../media/MediaContainer"
 import { Project } from "../../interfaces/Project"
 
@@ -14,13 +12,22 @@ const ProjectDescription: React.FC<Props> = ({project}) => {
     <Container>
       <Typography variant="h5" component="h5">{project.name}</Typography>
       <hr/>
-      <Typography>{project.description}</Typography>
-      <Box>
-        <Typography>Media</Typography>
-        <MediaContainer list={project.media}/>
-      </Box>
+      <Typography sx={{paddingBottom: "2rem"}}>{project.description}</Typography>
+      {project.media.length > 0 && (
+        <Box sx={{paddingBottom: "2rem"}}>
+          <Typography variant="h4">Media</Typography>
+          <MediaContainer list={project.media}/>
+        </Box>
+      )}
 
-      <Typography>Tags: {project.tags.join(", ")}</Typography>
+      {project.tags.length > 0 ? 
+        (
+          <Typography>Tags: {project.tags.join(", ")}</Typography>
+        ) : (
+          <Typography>No Tags Defined</Typography>
+        )
+      }
+
     </Container>
   )
 }
