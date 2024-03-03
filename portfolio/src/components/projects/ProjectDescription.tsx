@@ -15,12 +15,12 @@ const ProjectDescription: React.FC<Props> = ({project}) => {
       <Typography variant="h5" component="h5">{project.name}</Typography>
       <hr/>
       <Grid container justifyContent="space-between" spacing={2} wrap="wrap">
-        <Grid item>
-          <Typography sx={{paddingBottom: "2rem"}}>{project.description}</Typography>
+        <Grid item xs={12} sm={(project.website || project.repo) ? 10 : 12}>
+          <Typography sx={{paddingBottom: "2rem", whiteSpace: "pre-line"}}>{project.description}</Typography>
         </Grid>
 
         {(project.website || project.repo) && (
-          <Grid item>
+          <Grid item xs={12} sm={2}>
             <Box sx={{ p: 2, border: '1px solid grey', borderRadius: 2}}>
               <Typography variant="h6" component="h6">Links</Typography>
               <List dense={true}>
