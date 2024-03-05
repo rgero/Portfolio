@@ -16,7 +16,6 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   maxWidth: "75%",
-  maxHeight: "75%",
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
@@ -34,9 +33,9 @@ const MediaModal: React.FC<Props> = ({isOpen, closeModal, media}) => {
       aria-describedby="modal-modal-description"
     >
       <Container sx={style}>
-        <Grid container direction="column" alignItems="center" justifyContent="center">
+        <Grid container direction="column" alignItems="center" justifyContent="center" rowSpacing={2}>
           <Grid item>
-            <Typography id="modal-modal-title" variant="h4" component="h2" sx={{paddingBottom: "0.2em"}}>
+            <Typography id="modal-modal-title" variant="h4" component="h2">
               {media.title}
             </Typography>
           </Grid>
@@ -47,6 +46,11 @@ const MediaModal: React.FC<Props> = ({isOpen, closeModal, media}) => {
               <YouTube videoId={media.url}/>
             )}
           </Grid>
+          { media.description && (
+            <Grid item>
+              {media.description}
+            </Grid>
+          )}
         </Grid>
       </Container>
     </Modal>
