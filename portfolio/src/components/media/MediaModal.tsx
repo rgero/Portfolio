@@ -1,6 +1,5 @@
 import { Container, Grid, Modal, Typography } from "@mui/material";
 
-import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import { Media } from "../../interfaces/Media"
 import YouTube from "react-youtube";
 
