@@ -1,4 +1,4 @@
-import {MenuItem, SelectChangeEvent, Select as SelectObject} from '@mui/material/';
+import {FormControl, MenuItem, SelectChangeEvent, Select as SelectObject} from '@mui/material/';
 
 import { Option } from "../interfaces/SelectOptions"
 import React from "react"
@@ -11,17 +11,19 @@ interface Props {
 
 const Select: React.FC<Props> = ({options, value, onChange}) => {
   return (
-    <SelectObject
-      value={value}
-      onChange={onChange}
-      sx={{width: "100%"}}
-    >
-      {options.map(option => 
-        {
-          return (<MenuItem value={option.value}>{option.label}</MenuItem>)
-        })
-      }
-    </SelectObject>
+    <FormControl size="small" fullWidth>
+      <SelectObject
+        value={value}
+        onChange={onChange}
+        sx={{width: "100%"}}
+      >
+        {options.map(option => 
+          {
+            return (<MenuItem value={option.value}>{option.label}</MenuItem>)
+          })
+        }
+      </SelectObject>
+    </FormControl>
   )
 }
 
