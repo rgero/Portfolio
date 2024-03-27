@@ -72,40 +72,16 @@ export const ProjectList: Project[] = [
     repo: "https://github.com/rgero/Fajita",
     media: [
       { 
-        title: "Logo for the Ling Hotel",
+        title: "Dark Mode Example",
         type: 'image',
-        url: 'images/linghotel/logo-dark.png',
-        description: "The Logo for Ling Hotel"
+        url: 'images/fajita/DarkMode.jpg',
+        description: "Example of the Queue in Dark Mode"
       },
       { 
-        title: "LTT for Video Test",
-        type: 'video',
-        url: 'LfpXMuMvcWQ',
-        description: "This is a dumb video pretending to be for the project"
-      },
-      { 
-        title: "Logo for the Ling Hotel",
+        title: "Light Mode Example",
         type: 'image',
-        url: 'images/linghotel/logo-dark.png',
-        description: "The Logo for Ling Hotel"
-      },
-      { 
-        title: "LTT for Video Test",
-        type: 'video',
-        url: 'LfpXMuMvcWQ',
-        description: "This is a dumb video pretending to be for the project"
-      },
-      { 
-        title: "Logo for the Ling Hotel",
-        type: 'image',
-        url: 'images/linghotel/logo-dark.png',
-        description: "The Logo for Ling Hotel"
-      },
-      { 
-        title: "LTT for Video Test",
-        type: 'video',
-        url: 'LfpXMuMvcWQ',
-        description: "This is a dumb video pretending to be for the project"
+        url: 'images/fajita/LightMode.jpg',
+        description: "Example of the Queue in Light Mode"
       },
     ],
     tags: ['react', 'course'],
