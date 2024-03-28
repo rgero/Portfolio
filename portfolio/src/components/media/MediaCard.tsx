@@ -21,26 +21,8 @@ const MediaCard: React.FC<Props> = ({media}) => {
 
   // This feels like a hack.
   let cardJSX = (
-    <Card sx={{width: 300, maxHeight: 500, minHeight: 300}}>
-      <CardActionArea onClick={() => setModalOpen(true)}> 
-        <CardMedia
-          component="img"
-          src={constructURL}
-          height="200"
-          sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
-        />
-        <CardContent>
-          <Typography>{media.description}</Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-  )
-
-  if (onMobile && media.type=="video")
-  {
-    cardJSX = (
-      <Card sx={{width: 300, maxHeight: 500, minHeight: 300}}>
-        <CardActionArea href={`https://www.youtube.com/watch?v=${media.url}`}> 
+    <CardActionArea onClick={() => setModalOpen(true)} sx={{width: 300}}> 
+      <Card sx={{maxHeight: 500, minHeight: 300}}>
           <CardMedia
             component="img"
             src={constructURL}
@@ -50,8 +32,26 @@ const MediaCard: React.FC<Props> = ({media}) => {
           <CardContent>
             <Typography>{media.description}</Typography>
           </CardContent>
-        </CardActionArea>
       </Card>
+    </CardActionArea>
+  )
+
+  if (onMobile && media.type=="video")
+  {
+    cardJSX = (
+      <CardActionArea href={`https://www.youtube.com/watch?v=${media.url}`} sx={{width: 300}}> 
+        <Card sx={{maxHeight: 500, minHeight: 300}}>
+          <CardMedia
+            component="img"
+            src={constructURL}
+            height="200"
+            sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+          />
+          <CardContent>
+            <Typography>{media.description}</Typography>
+          </CardContent>
+        </Card>
+      </CardActionArea>
     )
   }
 
