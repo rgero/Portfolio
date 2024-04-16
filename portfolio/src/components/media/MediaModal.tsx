@@ -1,3 +1,5 @@
+import '../../styles/images.css';
+
 import { Container, Grid, Modal, Typography } from "@mui/material";
 
 import { Media } from "../../interfaces/Media"
@@ -40,7 +42,7 @@ const MediaModal: React.FC<Props> = ({isOpen, closeModal, media}) => {
           </Grid>
           <Grid item>
             { media.type == "image" ? (
-              <img src={media.url} width="100%" height="100%"/>
+              <img src={media.url} className="scaled-image"/>
             ) : (
               <YouTube videoId={media.url}/>
             )}

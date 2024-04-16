@@ -1,0 +1,5 @@
+.scaled-image {
+  width: auto;
+  max-height: 400px;
+  object-fit: scale-down;
+}
