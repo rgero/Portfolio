@@ -2,10 +2,10 @@ import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "yet-another-react-lightbox/styles.css";
 
+import { Button, Container } from "@mui/material"
 import { Captions, Fullscreen, Thumbnails, Video, Zoom } from "yet-another-react-lightbox/plugins"
 import Lightbox, { Slide } from "yet-another-react-lightbox"
 
-import { Container } from "@mui/material"
 import { Media } from "../../interfaces/Media"
 import React from "react"
 import YouTube from "./PlugIns/YouTube";
@@ -24,11 +24,9 @@ const MediaContainer: React.FC<Props> = ({list}) => {
         open={advancedExampleOpen}
         close={() => setAdvancedExampleOpen(false)}
         slides={list as Slide[]}
-        plugins={[Captions, Fullscreen, Thumbnails, Video, YouTube, Zoom]}
+        plugins={[Captions, Fullscreen, Thumbnails, YouTube, Zoom]}
       />
-      <button type="button" className="button" onClick={() => setAdvancedExampleOpen(true)}>
-        Open Media
-      </button>
+      <Button variant="contained" onClick={() => setAdvancedExampleOpen(true)}>View Media</Button>
     </Container>
   )
 }

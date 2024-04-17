@@ -44,7 +44,7 @@ const ProjectDescription: React.FC<Props> = ({project}) => {
       <hr/>
       {project.media.length > 0 && (
         <Box sx={{paddingBottom: "2rem"}}>
-          <Typography variant="h4">Media</Typography>
+          <Typography variant="h4" sx={{paddingBottom: "1rem"}}>Media</Typography>
           <MediaContainer list={project.media}/>
         </Box>
       )}
