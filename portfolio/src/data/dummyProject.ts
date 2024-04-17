@@ -75,12 +75,14 @@ export const ProjectList: Project[] = [
         title: "Dark Mode Example",
         type: 'image',
         url: 'images/fajita/DarkMode.jpg',
+        smallURL: 'images/fajita/DarkModeSmall.jpg',
         description: "Example of the Queue in Dark Mode"
       },
       { 
         title: "Light Mode Example",
         type: 'image',
         url: 'images/fajita/LightMode.jpg',
+        smallURL: 'images/fajita/LightModeSmall.jpg',
         description: "Example of the Queue in Light Mode"
       },
     ],
