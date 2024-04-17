@@ -61,17 +61,13 @@ export const ProjectList: Project[] = [
     repo: "https://github.com/rgero/Fajita",
     media: [
       { 
-        title: "Dark Mode Example",
         type: 'image',
-        url: 'images/fajita/DarkMode.jpg',
-        smallURL: 'images/fajita/DarkModeSmall.jpg',
+        src: 'images/fajita/DarkMode.jpg',
         description: "Example of the Queue in Dark Mode"
       },
       { 
-        title: "Light Mode Example",
         type: 'image',
-        url: 'images/fajita/LightMode.jpg',
-        smallURL: 'images/fajita/LightModeSmall.jpg',
+        src: 'images/fajita/LightMode.jpg',
         description: "Example of the Queue in Light Mode"
       },
     ],
