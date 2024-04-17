@@ -1,3 +1,5 @@
+import { GenericSlide, SlideImage } from "yet-another-react-lightbox";
+
 import { Project } from "../interfaces/Project";
 
 export const ProjectList: Project[] = [
@@ -26,40 +28,24 @@ export const ProjectList: Project[] = [
     website: "https://ling-hotel.vercel.app/login",
     media: [
       { 
-        title: "Logo for the Ling Hotel",
-        type: 'image',
-        url: 'images/linghotel/logo-dark.png',
+        type: "image",
+        src: 'images/linghotel/logo-dark.png',
         description: "The Logo for Ling Hotel"
       },
       { 
-        title: "LTT for Video Test",
-        type: 'video',
-        url: 'LfpXMuMvcWQ',
-        description: "This is a dumb video pretending to be for the project"
+        type: 'youtube',
+        src: 'https://www.youtube.com/embed/aqz-KE-bpKQ',
+        description: "This is a dumb video pretending to be for the project",
       },
       { 
-        title: "Logo for the Ling Hotel",
-        type: 'image',
-        url: 'images/linghotel/logo-dark.png',
+        type: "image",
+        src: 'images/linghotel/logo-dark.png',
         description: "The Logo for Ling Hotel"
       },
       { 
-        title: "LTT for Video Test",
-        type: 'video',
-        url: 'LfpXMuMvcWQ',
-        description: "This is a dumb video pretending to be for the project"
-      },
-      { 
-        title: "Logo for the Ling Hotel",
-        type: 'image',
-        url: 'images/linghotel/logo-dark.png',
-        description: "The Logo for Ling Hotel"
-      },
-      { 
-        title: "LTT for Video Test",
-        type: 'video',
-        url: 'LfpXMuMvcWQ',
-        description: "This is a dumb video pretending to be for the project"
+        type: 'youtube',
+        src: 'https://www.youtube.com/embed/aqz-KE-bpKQ',
+        description: "This is a dumb video pretending to be for the project",
       },
     ],
     tags: ['react', 'course'],

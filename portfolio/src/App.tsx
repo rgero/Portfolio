@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "yet-another-react-lightbox/styles.css";
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 

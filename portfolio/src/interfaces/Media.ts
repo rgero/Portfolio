@@ -1,7 +1,12 @@
 export interface Media {
-  title: string,
-  type: string,
-  url: string,
-  smallURL?: string,
-  description: string
+  type: string;
+  src: string;
+  alt?: string;
+  description?: string;
+  width?: number;
+  height?: number;
+  poster?: string;
+  imageFit?: ImageFit;
 }
+
+export type ImageFit = "contain" | "cover";
