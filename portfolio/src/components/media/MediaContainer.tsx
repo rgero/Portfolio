@@ -16,8 +16,7 @@ interface Props {
 
 const MediaContainer: React.FC<Props> = ({list}) => {
   const [advancedExampleOpen, setAdvancedExampleOpen] = React.useState(false);
-
-  // I want this to be a dynamic list that contains two columns.
+  
   return (
     <Container>
       <Lightbox
