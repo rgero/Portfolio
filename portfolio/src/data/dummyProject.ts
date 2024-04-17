@@ -1,5 +1,3 @@
-import { GenericSlide, SlideImage } from "yet-another-react-lightbox";
-
 import { Project } from "../interfaces/Project";
 
 export const ProjectList: Project[] = [
@@ -36,6 +34,9 @@ export const ProjectList: Project[] = [
         type: 'youtube',
         src: 'https://www.youtube.com/embed/aqz-KE-bpKQ',
         description: "This is a dumb video pretending to be for the project",
+        width: window.innerWidth*0.6,
+        height: window.innerHeight*0.6,
+
       },
       { 
         type: "image",
@@ -46,6 +47,8 @@ export const ProjectList: Project[] = [
         type: 'youtube',
         src: 'https://www.youtube.com/embed/aqz-KE-bpKQ',
         description: "This is a dumb video pretending to be for the project",
+        width: window.innerWidth*0.6,
+        height: window.innerHeight*0.6,
       },
     ],
     tags: ['react', 'course'],
