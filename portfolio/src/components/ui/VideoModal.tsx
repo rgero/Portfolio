@@ -25,7 +25,13 @@ const style = {
 };
 
 
-const MediaModal: React.FC<Props> = ({isOpen, closeModal, media}) => {
+const VideoModal: React.FC<Props> = ({isOpen, closeModal, media}) => {
+
+  if (media.type === "image")
+  {
+    throw Error("Video Modal seeing Image, rather than YouTube link");
+  }
+
   return (
     <Modal
       open={isOpen}
@@ -41,11 +47,7 @@ const MediaModal: React.FC<Props> = ({isOpen, closeModal, media}) => {
             </Typography>
           </Grid>
           <Grid item>
-            { media.type == "image" ? (
-              <img src={media.url} className="scaled-image"/>
-            ) : (
-              <YouTube videoId={media.url}/>
-            )}
+            <YouTube videoId={media.url}/>
           </Grid>
           { media.description && (
             <Grid item>
@@ -58,4 +60,4 @@ const MediaModal: React.FC<Props> = ({isOpen, closeModal, media}) => {
   )
 }
 
-export default MediaModal
+export default VideoModal

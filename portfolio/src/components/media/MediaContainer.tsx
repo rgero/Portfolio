@@ -15,6 +15,7 @@ const MediaContainer: React.FC<Props> = ({list}) => {
       <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap" justifyContent="center" alignItems="center">
         {
           list.map((entry: Media, index: number) => {
+            console.log(entry);
             return (<MediaCard media={entry} key={index}/>)
           })
         }
