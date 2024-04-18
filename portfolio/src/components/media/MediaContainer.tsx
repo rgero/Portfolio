@@ -3,7 +3,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "yet-another-react-lightbox/styles.css";
 
 import { Button, Container } from "@mui/material"
-import { Captions, Fullscreen, Thumbnails, Video, Zoom } from "yet-another-react-lightbox/plugins"
+import { Captions, Fullscreen, Thumbnails, Zoom } from "yet-another-react-lightbox/plugins"
 import Lightbox, { Slide } from "yet-another-react-lightbox"
 
 import { Media } from "../../interfaces/Media"
