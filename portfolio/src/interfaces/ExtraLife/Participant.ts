@@ -1,3 +1,5 @@
+import { Links } from "./Links";
+
 export interface Participant {
   fundraisingGoal:     number;
   links:               Links;
