@@ -1,6 +1,7 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { ExtraLifeParticipantResponse, useGetParticipant } from "./hooks/useGetParticipant";
 
+import LinearProgress from '@mui/material/LinearProgress';
 import Spinner from "../../ui/Spinner";
 
 const ExtraLifeCard = () => {
@@ -10,6 +11,8 @@ const ExtraLifeCard = () => {
 
   const avatar = participant.avatarImageURL;
   const name = participant.displayName;
+  const fundraisingGoal = participant.fundraisingGoal;
+  const sumDonations = participant.sumDonations;
 
   const cardStyle = {
     width: 250,
@@ -33,8 +36,9 @@ const ExtraLifeCard = () => {
       <CardContent>
         <Typography>{name}</Typography>
         <hr/>
-        <Typography>Raised: ${participant.sumDonations}</Typography>
-        <Typography>Goal: ${participant.fundraisingGoal}</Typography>
+        <Typography>${sumDonations} / ${fundraisingGoal}</Typography>
+        <LinearProgress variant="determinate" value={sumDonations/fundraisingGoal*100} />
+        <Typography sx={{paddingTop: "20px"}}>Member of ${participant.teamName}</Typography>
       </CardContent>
     </Card>
   )
