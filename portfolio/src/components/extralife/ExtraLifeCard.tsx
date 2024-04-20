@@ -1,7 +1,7 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Box, Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import { ExtraLifeParticipantResponse, useGetParticipant } from "./hooks/useGetParticipant";
 
-import LinearProgress from '@mui/material/LinearProgress';
+import ProgressBar from "../ui/ProgressBar";
 import Spinner from "../../ui/Spinner";
 
 const ExtraLifeCard = () => {
@@ -35,10 +35,7 @@ const ExtraLifeCard = () => {
       </div>
       <CardContent>
         <Typography>{name}</Typography>
-        <hr/>
-        <Typography>${sumDonations} / ${fundraisingGoal}</Typography>
-        <LinearProgress variant="determinate" value={sumDonations/fundraisingGoal*100} />
-        <Typography sx={{paddingTop: "20px"}}>Member of ${participant.teamName}</Typography>
+        <ProgressBar current={sumDonations} target={fundraisingGoal}/>
       </CardContent>
     </Card>
   )
