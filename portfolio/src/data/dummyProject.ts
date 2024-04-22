@@ -1,5 +1,9 @@
 import { Project } from "../interfaces/Project";
 
+const targetWidth = window.innerWidth*0.75;
+const targetHeight = window.innerHeight*0.75;
+
+
 export const ProjectList: Project[] = [
   {
     id: 1,
@@ -34,8 +38,8 @@ export const ProjectList: Project[] = [
         type: 'youtube',
         src: 'https://www.youtube.com/embed/aqz-KE-bpKQ',
         description: "This is a dumb video pretending to be for the project",
-        width: window.innerWidth*0.6,
-        height: window.innerHeight*0.6,
+        width: targetWidth,
+        height: targetHeight,
 
       },
       { 
@@ -47,8 +51,8 @@ export const ProjectList: Project[] = [
         type: 'youtube',
         src: 'https://www.youtube.com/embed/aqz-KE-bpKQ',
         description: "This is a dumb video pretending to be for the project",
-        width: window.innerWidth*0.6,
-        height: window.innerHeight*0.6,
+        width: targetWidth,
+        height: targetHeight,
       },
     ],
     tags: ['react', 'course'],
@@ -76,6 +80,44 @@ export const ProjectList: Project[] = [
   },
   {
     id: 5,
+    name: "Painbow Road",
+    repo: "",
+    website: "",
+    media: [
+      {
+        type: 'youtube',
+        src: 'https://www.youtube.com/embed/AyIick7reww',
+        description: "This was one of the first videos recorded of Painbow Road.",
+        width: targetWidth,
+        height: targetHeight,
+      },
+      {
+        type: 'youtube',
+        src: 'https://www.youtube.com/embed/XqpKqTFqfC0',
+        description: "This was an example of the custom Twitch integration that allowed for people to mess with Josh",
+        width: targetWidth,
+        height: targetHeight,
+      },
+      {
+        type: 'youtube',
+        src: 'https://www.youtube.com/embed/nWw4V2r_5Zc',
+        description: "This was the first iteration of the track with graphics",
+        width: targetWidth,
+        height: targetHeight,
+      },
+      {
+        type: 'youtube',
+        src: 'https://www.youtube.com/embed/9llyfSYPOOU',
+        description: "This was the first cut of the Start Menu",
+        width: targetWidth,
+        height: targetHeight,
+      },
+    ],
+    description: "A game, based on Mario Kart, designed to be incredibly frustrating as a donation incentive for Extra Life. It utilized the Unity Game Engine and had a custom integration with Twitch to allow people in the chat to enable pranks.",
+    tags: ['unity', 'extra life']
+  },
+  {
+    id: 6,
     name: "Empty Project",
     repo: "",
     website: "http://google.com",
@@ -89,9 +131,8 @@ export const ProjectList: Project[] = [
         type: 'youtube',
         src: 'https://www.youtube.com/embed/aqz-KE-bpKQ',
         description: "This is a dumb video pretending to be for the project",
-        width: window.innerWidth*0.6,
-        height: window.innerHeight*0.6,
-
+        width: targetWidth,
+        height: targetHeight,
       },
       { 
         type: "image",
@@ -102,8 +143,8 @@ export const ProjectList: Project[] = [
         type: 'youtube',
         src: 'https://www.youtube.com/embed/aqz-KE-bpKQ',
         description: "This is a dumb video pretending to be for the project",
-        width: window.innerWidth*0.6,
-        height: window.innerHeight*0.6,
+        width: targetWidth,
+        height: targetHeight,
       },
     ],
     tags: ['react', 'course'],
