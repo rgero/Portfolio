@@ -6,7 +6,9 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import { ProjectList as DummyProjects } from '../../data/dummyProject';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ProjectDescription from './ProjectDescription';
+import Spinner from '../../ui/Spinner';
 import { styled } from '@mui/material/styles';
+import { useGetProjects } from './hooks/useGetProjects';
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -39,9 +41,14 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
 }));
 
 const ProjectList = () => {
+  const {projects, isLoading} = useGetProjects();
+
+  if (isLoading) { return <Spinner/>}
+  if (projects.length == 0) { return; }
+
   return (
     <Container>
-      {DummyProjects.map( (entry, index) => (
+      {projects.map( (entry, index) => (
         <Accordion
           slotProps={{ transition: { timeout: 600 } }}
         >

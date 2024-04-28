@@ -42,10 +42,10 @@ const ProjectDescription: React.FC<Props> = ({project}) => {
         )}
       </Grid>
       <hr/>
-      {project.media.length > 0 && (
+      {project.images.length > 0 && (
         <Box sx={{paddingBottom: "2rem"}}>
           <Typography variant="h4" sx={{paddingBottom: "1rem"}}>Media</Typography>
-          <MediaContainer list={project.media}/>
+          <MediaContainer list={project.images}/>
         </Box>
       )}
 
