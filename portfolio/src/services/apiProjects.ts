@@ -1,15 +1,13 @@
-import axios from "axios";
-
-const backendURL = "http://localhost:9000" //import.meta.env.VITE_BACKEND_URL;
+import supabase from "./supabase";
 
 export const getProjects = async () => {
-  const projectURL = backendURL + "/projects";
+  const {data, error} = await supabase.from("projects").select("*");
 
-  const response = await axios.get(projectURL);
-  if (response.status != 200)
+  if (error)
   {
-    throw new Error("Error getting projects");
+      console.error(error);
+      throw new Error("Projects cannot be loaded");
   }
 
-  return response.data;
+  return data;
 }

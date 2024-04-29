@@ -11,6 +11,9 @@ interface Props {
 }
 
 const ProjectDescription: React.FC<Props> = ({project}) => {
+
+  const imageList = project.images.map( (entry) => { return {src: entry} });
+
   return (
     <Container>
       <Typography variant="h5" component="h5">{project.name}</Typography>
@@ -46,7 +49,7 @@ const ProjectDescription: React.FC<Props> = ({project}) => {
       {project.images.length > 0 && (
         <Box sx={{paddingBottom: "2rem"}}>
           <Typography variant="h4" sx={{paddingBottom: "1rem"}}>Media</Typography>
-          <MediaContainer list={project.images}/>
+          <MediaContainer list={imageList}/>
         </Box>
       )}
 

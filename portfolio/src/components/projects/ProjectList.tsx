@@ -3,7 +3,6 @@ import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
 import MuiAccordionSummary, {AccordionSummaryProps} from '@mui/material/AccordionSummary';
 
 import AccordionDetails from '@mui/material/AccordionDetails';
-import { ProjectList as DummyProjects } from '../../data/dummyProject';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ProjectDescription from './ProjectDescription';
 import Spinner from '../../ui/Spinner';
@@ -61,7 +60,7 @@ const ProjectList = () => {
               <Grid item>
                 {entry.name}
               </Grid>
-              {entry.tags.length > 0 && (
+              {entry.tags && entry.tags.length > 0 && (
                 <Grid item>
                   Tags: {entry.tags.join(', ')}
                 </Grid>

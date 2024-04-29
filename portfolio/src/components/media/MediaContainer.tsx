@@ -16,7 +16,6 @@ interface Props {
 
 const MediaContainer: React.FC<Props> = ({list}) => {
   const [advancedExampleOpen, setAdvancedExampleOpen] = React.useState(false);
-  
   return (
     <Container>
       <Lightbox
