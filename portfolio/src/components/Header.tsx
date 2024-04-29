@@ -29,7 +29,7 @@ const Header = () => {
     setAnchorElNav(null);
   };
 
-  const handleButtonPress = (event, page: string) =>
+  const handleButtonPress = (page: string) =>
   {
     handleCloseNavMenu();
     navigate(page)
@@ -86,7 +86,7 @@ const Header = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.label} onClick={(e) => handleButtonPress(e, page.url)}>
+                <MenuItem key={page.label} onClick={() => handleButtonPress(page.url)}>
                   <Typography textAlign="center">{page.label}</Typography>
                 </MenuItem>
               ))}
@@ -118,7 +118,7 @@ const Header = () => {
             {pages.map((page) => (
               <Button
                 key={page.label}
-                onClick={(e) => handleButtonPress(e, page.url)}
+                onClick={() => handleButtonPress(page.url)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page.label}

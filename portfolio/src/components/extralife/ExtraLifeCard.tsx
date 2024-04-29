@@ -1,11 +1,11 @@
-import { Box, Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { ExtraLifeParticipantResponse, useGetParticipant } from "./hooks/useGetParticipant";
 
 import ProgressBar from "../ui/ProgressBar";
 import Spinner from "../../ui/Spinner";
 
 const ExtraLifeCard = () => {
-  const {isLoading, participant, error, refetch}: ExtraLifeParticipantResponse = useGetParticipant();
+  const {isLoading, participant}: ExtraLifeParticipantResponse = useGetParticipant();
 
   if (isLoading) return (<Spinner/>)
 
