@@ -51,6 +51,7 @@ const ProjectList = () => {
       {projects.map( (entry, index) => (
         <Accordion
           slotProps={{ transition: { timeout: 600 } }}
+          key={index}
         >
           <AccordionSummary
             aria-controls={`panel${index}-content`}

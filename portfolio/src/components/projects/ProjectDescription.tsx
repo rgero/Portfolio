@@ -2,6 +2,7 @@ import { Box, Container, Grid, List, ListItemButton, ListItemText, Typography } 
 
 import FolderCopyIcon from '@mui/icons-material/FolderCopy';
 import LanguageIcon from '@mui/icons-material/Language';
+import Markdown from "react-markdown";
 import MediaContainer from "../media/MediaContainer"
 import { Project } from "../../interfaces/Project"
 
@@ -16,7 +17,7 @@ const ProjectDescription: React.FC<Props> = ({project}) => {
       <hr/>
       <Grid container justifyContent="space-between" spacing={2} wrap="wrap">
         <Grid item xs={12} md={(project.website || project.repo) ? 9 : 12}>
-          <Typography sx={{paddingBottom: "2rem", whiteSpace: "pre-line"}}>{project.description}</Typography>
+          <Markdown>{project.description}</Markdown>
         </Grid>
 
         {(project.website || project.repo) && (

@@ -17,9 +17,9 @@ const Select: React.FC<Props> = ({options, value, onChange}) => {
         onChange={onChange}
         sx={{width: "100%"}}
       >
-        {options.map(option => 
+        {options.map((option, index) => 
           {
-            return (<MenuItem value={option.value}>{option.label}</MenuItem>)
+            return (<MenuItem key={index} value={option.value}>{option.label}</MenuItem>)
           })
         }
       </SelectObject>
