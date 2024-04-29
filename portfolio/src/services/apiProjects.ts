@@ -9,5 +9,16 @@ export const getProjects = async () => {
       throw new Error("Projects cannot be loaded");
   }
 
-  return data;
+  const responseData = [];
+  for(let i = 0; i < data.length; i++)
+  {
+    const targetProject = data[i];
+    for(let j = 0; j < targetProject.images.length; j++)
+    {
+      targetProject.images[j] = {src: targetProject.images[j]}
+    }
+    responseData.push(targetProject);
+  }
+  
+  return responseData;
 }
