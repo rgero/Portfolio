@@ -1,16 +1,7 @@
-import { Container, Grid, styled } from "@mui/material"
-
+import { ContainerHeader } from "../../ui/ContainerHeader"
+import { Grid } from "@mui/material"
 import PageHeader from "../../ui/PageHeader"
 import SortBy from "../../ui/SortBy"
-
-const ContainerHeader = styled(Container)(({ theme }) => ({
-  [theme.breakpoints.down('lg')]: {
-    paddingBottom: "0rem",
-  },
-  [theme.breakpoints.down('md')]: {
-    paddingBottom: "1rem",
-  },
-}));
 
 const ProjectHeader = () => {
   return (
