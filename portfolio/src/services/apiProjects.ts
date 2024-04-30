@@ -1,7 +1,14 @@
 import supabase from "./supabase";
 
-export const getProjects = async () => {
-  const {data, error} = await supabase.from("projects").select("*");
+export const getProjects = async (sortBy) => {
+  let query = supabase.from("projects").select("*");
+
+  if (sortBy)
+  {
+    query = query.order(sortBy.field, {ascending: sortBy.direction === "asc"})
+  }
+
+  const {data, error} = await query;
 
   if (error)
   {
