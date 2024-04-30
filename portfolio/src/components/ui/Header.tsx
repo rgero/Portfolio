@@ -1,6 +1,6 @@
 import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from "@mui/material"
 
-import DarkModeToggle from "../ui/DarkModeToggle";
+import DarkModeToggle from "../../ui/DarkModeToggle";
 import MenuIcon from '@mui/icons-material/Menu';
 import SportsHockey from '@mui/icons-material/SportsHockey';
 import { useNavigate } from "react-router-dom";
