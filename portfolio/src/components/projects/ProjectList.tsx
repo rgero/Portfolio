@@ -1,4 +1,4 @@
-import { Container, Grid } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
 import MuiAccordionSummary, {AccordionSummaryProps} from '@mui/material/AccordionSummary';
 
@@ -50,15 +50,17 @@ const ProjectList = () => {
       {projects.map( (entry, index) => (
         <Accordion
           slotProps={{ transition: { timeout: 600 } }}
+          expanded={true}
           key={index}
         >
           <AccordionSummary
             aria-controls={`panel${index}-content`}
             id={`panel${index}-header`}
+            sx={{marginBottom: 2}}
           >
-            <Grid container justifyContent="space-between">
+            <Grid container justifyContent="space-between" alignItems={"center"}>
               <Grid item>
-                {entry.name}
+                <Typography variant="h5">{entry.name}</Typography>
               </Grid>
               {entry.tags && entry.tags.length > 0 && (
                 <Grid item>
@@ -68,7 +70,7 @@ const ProjectList = () => {
 
             </Grid>
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails sx={{marginBottom: 2}}>
             <ProjectDescription project={entry}/>
           </AccordionDetails>
         </Accordion>

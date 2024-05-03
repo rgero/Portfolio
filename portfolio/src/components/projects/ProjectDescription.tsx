@@ -13,8 +13,6 @@ interface Props {
 const ProjectDescription: React.FC<Props> = ({project}) => {
   return (
     <Container>
-      <Typography variant="h5" component="h5">{project.name}</Typography>
-      <hr/>
       <Grid container justifyContent="space-between" spacing={2} wrap="wrap">
         <Grid item xs={12} md={(project.website || project.repo) ? 9 : 12}>
           <Markdown>{project.description}</Markdown>
