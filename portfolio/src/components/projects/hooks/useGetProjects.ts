@@ -15,7 +15,7 @@ export const useGetProjects = (): ProjectResponse => {
   const [searchParams] = useSearchParams();
 
   // SORT
-  const sortByRaw = searchParams.get('sortBy') || 'fullName-desc';
+  const sortByRaw = searchParams.get('sortBy') || 'name-desc';
   const [field, direction] = sortByRaw.split('-');
   const sortBy = {field, direction}
 
