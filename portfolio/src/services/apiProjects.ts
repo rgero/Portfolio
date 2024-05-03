@@ -1,6 +1,6 @@
 import supabase from "./supabase";
 
-const baseImageURL = `https://dptjnhqzimzozmtcmdkt.supabase.co/storage/v1/object/public/project_images/`
+const baseImageURL = `${import.meta.env.VITE_SUPABASE_BUCKET_URL}project_images/`
 
 export const getProjects = async (sortBy) => {
   let query = supabase.from("projects").select("*");
