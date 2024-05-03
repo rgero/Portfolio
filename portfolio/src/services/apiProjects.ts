@@ -1,5 +1,7 @@
 import supabase from "./supabase";
 
+const baseImageURL = `https://dptjnhqzimzozmtcmdkt.supabase.co/storage/v1/object/public/project_images/`
+
 export const getProjects = async (sortBy) => {
   let query = supabase.from("projects").select("*");
 
@@ -22,7 +24,7 @@ export const getProjects = async (sortBy) => {
     const targetProject = data[i];
     for(let j = 0; j < targetProject.images.length; j++)
     {
-      targetProject.images[j] = {src: targetProject.images[j]}
+      targetProject.images[j] = {src: `${baseImageURL}${targetProject.images[j]}`}
     }
     responseData.push(targetProject);
   }
