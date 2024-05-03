@@ -8,6 +8,5 @@ const instance = axios.create({
 
 export const fetchParticipant = async () => {
   const response = await instance.get(``)
-  console.log(response);
   return response.data;
 }
