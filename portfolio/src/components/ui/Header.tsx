@@ -16,7 +16,6 @@ const Header = () => {
   const navigate = useNavigate();
 
   const pages: NavbarButton[] = [
-    { label: "About Me", url: "about"},
     { label: "Projects", url: "projects"},
     { label: "Resume", url: "resume"}
   ]
