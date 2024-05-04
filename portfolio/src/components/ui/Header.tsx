@@ -35,7 +35,7 @@ const Header = () => {
   }
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{marginBottom: 2}}>
       <Container maxWidth="xl">
         <Toolbar>
           <SportsHockey sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
