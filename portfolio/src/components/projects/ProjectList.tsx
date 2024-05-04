@@ -50,13 +50,12 @@ const ProjectList = () => {
       {projects.map( (entry, index) => (
         <Accordion
           slotProps={{ transition: { timeout: 600 } }}
-          expanded={true}
+          defaultExpanded={true}
           key={index}
         >
           <AccordionSummary
             aria-controls={`panel${index}-content`}
             id={`panel${index}-header`}
-            sx={{marginBottom: 2}}
           >
             <Grid container justifyContent="space-between" alignItems={"center"}>
               <Grid item>
