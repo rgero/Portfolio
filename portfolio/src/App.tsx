@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import AppLayout from './ui/AppLayout';
 import { DarkModeProvider } from './context/DarkModeContext';
+import NotFoundPage from './pages/NotFoundPage';
 import ProjectListPage from './pages/ProjectListPage';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import ResumePage from './pages/ResumePage';
@@ -32,6 +33,7 @@ const App = () => {
               <Route index element={<ProjectListPage/>}/>
               <Route path="/projects" element={<ProjectListPage/>}/>
               <Route path="/resume" element={<ResumePage/>}/>
+              <Route path='*' element={<NotFoundPage/>} />
             </Route>
           </Routes>
         </BrowserRouter>
