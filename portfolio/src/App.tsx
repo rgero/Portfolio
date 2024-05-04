@@ -1,9 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import AboutPage from './pages/AboutPage';
 import AppLayout from './ui/AppLayout';
 import { DarkModeProvider } from './context/DarkModeContext';
 import ProjectListPage from './pages/ProjectListPage';
@@ -30,9 +29,8 @@ const App = () => {
             <Route element={
               <AppLayout/>
             }>
-              <Route index element={<AboutPage/>}/>
+              <Route index element={<ProjectListPage/>}/>
               <Route path="/projects" element={<ProjectListPage/>}/>
-              <Route path='/about' element={<AboutPage/>} />
               <Route path="/resume" element={<ResumePage/>}/>
             </Route>
           </Routes>
