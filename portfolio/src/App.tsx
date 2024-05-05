@@ -10,7 +10,7 @@ import ProjectListPage from './pages/ProjectListPage';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import ResumePage from './pages/ResumePage';
 
-const timeInSeconds = 15;
+const timeInSeconds = 600;
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
