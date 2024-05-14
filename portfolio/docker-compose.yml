@@ -10,9 +10,8 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.portfolio.rule=Host(`roymond.net`)||Host(`www.roymond.net`)"
-      - "traefik.http.routers.portfolio.entrypoints=https"
-      - "traefik.http.routers.portfolio.middlewares=default@file"
-      - "traefik.http.routers.portfolio.tls.certresolver=letsEncrypt"
+      - "traefik.http.routers.portfolio.entrypoints=websecure"
+      - "traefik.http.routers.portfolio.tls.certresolver=production"
       - "traefik.http.services.portfolio.loadbalancer.server.port=5550"
     ports:
       - "5550:5550"
