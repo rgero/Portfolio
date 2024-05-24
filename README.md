@@ -1,0 +1,1 @@
+This repository is essentially the gist of my website. The goal of it is to create a website that people can go to and quickly access all of my published projects, whether they are a subdomain of my website, a game hosted on Itch.io or something else along those lines.
