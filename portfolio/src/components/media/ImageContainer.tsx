@@ -24,7 +24,7 @@ const ImageContainer: React.FC<ImageContainerProps> = ({image}) => {
       <img
         src={image.src}
         alt={image.alt}
-        style={{ cursor: 'pointer', width: '150px', height: '50px' }}
+        style={{ cursor: 'pointer', width: '100px', height: '100px', objectFit: 'contain'}}
         onClick={handleOpen}
       />
       <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
