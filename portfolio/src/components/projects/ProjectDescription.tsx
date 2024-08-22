@@ -19,10 +19,10 @@ const ProjectDescription: React.FC<Props> = ({project}) => {
         <ProjectLinks project={project}/>
       </Grid>
       <hr/>
-      {project.images.length > 0 && (
+      {project.media.length > 0 && (
         <Box sx={{paddingBottom: "2rem"}}>
           <Typography variant="h4" sx={{paddingBottom: "1rem"}}>Media</Typography>
-          <MediaContainer list={project.images}/>
+          <MediaContainer list={project.media}/>
         </Box>
       )}
 

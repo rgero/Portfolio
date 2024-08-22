@@ -1,4 +1,3 @@
-import dummyData from "./dummyData";
 import supabase from "./supabase";
 
 const baseImageURL = `${import.meta.env.VITE_SUPABASE_BUCKET_URL}/project_images/`
@@ -23,14 +22,14 @@ export const getProjects = async (sortBy : { direction: string, field: string })
   for(let i = 0; i < data.length; i++)
   {
     const targetProject = data[i];
-    for(let j = 0; j < targetProject.images.length; j++)
+    for(let j = 0; j < targetProject.media.length; j++)
     {
-      targetProject.images[j] = {src: `${baseImageURL}${targetProject.images[j]}`}
+      targetProject.media[j] = {
+        type: `${targetProject.media[j].type}`,
+        src: `${baseImageURL}${targetProject.media[j].src}`
+      }
     }
     responseData.push(targetProject);
   }
-
-  console.log(responseData);
-  
-  return dummyData;
+  return responseData;
 }

@@ -1,11 +1,11 @@
-import { Image } from './Image'
+import { Media } from './Media'
 
 export interface Project {
   id: number,
   name: string,
   repo: string,
   website: string,
-  images: Image[],
+  media: Media[],
   tags: string[],
   description: string
 }
