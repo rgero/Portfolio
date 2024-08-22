@@ -1,11 +1,11 @@
 import { Container } from '@mui/material';
-import ProjectHeader from '../components/projects/ProjectHeader';
 import ProjectList from '../components/projects/ProjectList';
+import ProjectPageHeader from '../components/projects/ProjectPageHeader';
 
 const ProjectListPage = () => {
   return (
     <Container>
-      <ProjectHeader/>
+      <ProjectPageHeader/>
       <ProjectList/>
     </Container>
   )

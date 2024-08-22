@@ -1,12 +1,12 @@
+import React from "react";
 import { IconButton, Tooltip } from "@mui/material";
-
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness5Icon from '@mui/icons-material/Brightness5';
 import { useDarkMode } from "../context/DarkModeContext";
 
-const DarkModeToggle = () => {
+const DarkModeToggle: React.FC = () => {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
-  const darkModeTip: string = isDarkMode ? "Toggle to Light Mode" : "Toggle to Dark Mode";
+  const darkModeTip = isDarkMode ? "Toggle to Light Mode" : "Toggle to Dark Mode";
 
   return (
     <Tooltip title={darkModeTip}>
@@ -15,10 +15,10 @@ const DarkModeToggle = () => {
         aria-label="toggle dark mode"
         onClick={toggleDarkMode}
       >
-        {isDarkMode ? <Brightness5Icon/> : <Brightness4Icon/> }
+        {isDarkMode ? <Brightness5Icon /> : <Brightness4Icon />}
       </IconButton>
     </Tooltip>
   );
-}
+};
 
-export default DarkModeToggle
+export default DarkModeToggle;

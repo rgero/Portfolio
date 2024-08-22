@@ -3,7 +3,7 @@ import { Grid } from "@mui/material"
 import PageHeader from "../../ui/PageHeader"
 import SortBy from "../../ui/SortBy"
 
-const ProjectHeader = () => {
+const ProjectPageHeader = () => {
   return (
     <ContainerHeader>
       <Grid container justifyContent="space-between" alignItems="center">
@@ -23,4 +23,4 @@ const ProjectHeader = () => {
   )
 }
 
-export default ProjectHeader
+export default ProjectPageHeader
