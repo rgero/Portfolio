@@ -1,39 +1,21 @@
-import "yet-another-react-lightbox/plugins/captions.css";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
-import "yet-another-react-lightbox/styles.css";
-
-import { Button, Container } from "@mui/material"
-import { Captions, Fullscreen, Thumbnails, Zoom } from "yet-another-react-lightbox/plugins"
-import Lightbox, { Slide } from "yet-another-react-lightbox"
-
+import ImageContainer from "./ImageContainer";
 import { Media } from "../../interfaces/Media";
 import React from "react"
 import VideoContainer from "./VideoContainer";
-import YouTube from "./PlugIns/YouTube";
 
 interface Props {
   list: Media[]
 }
 
 const MediaContainer: React.FC<Props> = ({list}) => {
-  const [advancedExampleOpen, setAdvancedExampleOpen] = React.useState(false);
-
+  console.log(list);
   if (list[0].type !== "image") 
   {
     return <VideoContainer video={list[0]}/>
-  }
+  } else {
 
-  return (
-    <Container>
-      <Lightbox
-        open={advancedExampleOpen}
-        close={() => setAdvancedExampleOpen(false)}
-        slides={list as Slide[]}
-        plugins={[Captions, Fullscreen, Thumbnails, YouTube, Zoom]}
-      />
-      <Button variant="contained" onClick={() => setAdvancedExampleOpen(true)}>View Media</Button>
-    </Container>
-  )
+    return <ImageContainer image={list[0]}/>
+  }
 }
 
 export default MediaContainer
