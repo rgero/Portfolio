@@ -26,7 +26,7 @@ export const getProjects = async (sortBy : { direction: string, field: string })
     {
       targetProject.media[j] = {
         type: `${targetProject.media[j].type}`,
-        src: `${baseImageURL}${targetProject.media[j].src}`
+        src: targetProject.media[j].type === "image" ? `${baseImageURL}${targetProject.media[j].src}` : `${targetProject.media[j].src}`
       }
     }
     responseData.push(targetProject);
