@@ -3,6 +3,7 @@ import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
 import MuiAccordionSummary, {AccordionSummaryProps} from '@mui/material/AccordionSummary';
 
 import AccordionDetails from '@mui/material/AccordionDetails';
+import Empty from '../../ui/Empty';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ProjectDescription from './ProjectDescription';
 import Spinner from '../../ui/Spinner';
@@ -43,7 +44,7 @@ const ProjectList = () => {
   const {projects, isLoading} = useGetProjects();
 
   if (isLoading) { return <Spinner/>}
-  if (projects.length == 0) { return; }
+  if (projects.length == 0) { return <Empty resource='projects'/>; }
 
   return (
     <Container>
