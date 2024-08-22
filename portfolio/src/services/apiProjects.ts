@@ -1,3 +1,4 @@
+import dummyData from "./dummyData";
 import supabase from "./supabase";
 
 const baseImageURL = `${import.meta.env.VITE_SUPABASE_BUCKET_URL}/project_images/`
@@ -28,6 +29,8 @@ export const getProjects = async (sortBy : { direction: string, field: string })
     }
     responseData.push(targetProject);
   }
+
+  console.log(responseData);
   
-  return responseData;
+  return dummyData;
 }

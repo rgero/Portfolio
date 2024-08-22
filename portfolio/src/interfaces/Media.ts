@@ -1,8 +1,8 @@
 export interface Media {
-  type: string;
+  type?: string;
   src: string;
   alt?: string;
-  description?: string;
+  title?: string;
   width?: number;
   height?: number;
   poster?: string;
