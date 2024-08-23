@@ -1,4 +1,4 @@
-import { Box, Dialog, DialogContent, DialogTitle, IconButton } from "@mui/material";
+import { Box, Dialog, DialogContent, DialogTitle, IconButton, useMediaQuery } from "@mui/material";
 
 import CloseIcon from '@mui/icons-material/Close';
 import { Media } from "../../interfaces/Media";
@@ -10,6 +10,7 @@ interface ImageContainerProps {
 
 const ImageContainer: React.FC<ImageContainerProps> = ({image}) => {
   const [open, setOpen] = React.useState(false);
+  const matchesXS = useMediaQuery('(max-width:500px)');
 
   const handleOpen = () => {
     setOpen(true);
@@ -27,7 +28,7 @@ const ImageContainer: React.FC<ImageContainerProps> = ({image}) => {
         style={{ cursor: 'pointer', width: '100px', height: '100px', objectFit: 'contain'}}
         onClick={handleOpen}
       />
-      <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
+      <Dialog open={open} onClose={handleClose} maxWidth={matchesXS ? "xs" : "sm"} fullWidth>
         <DialogTitle>
           {image.alt}
           <IconButton
