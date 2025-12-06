@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Project } from '../interfaces/Project';
 import {getProjects} from '../../services/apiProjects'
 
@@ -14,7 +15,9 @@ export default async function ProjectsPage() {
             key={project.id}
             className="border p-3 rounded-lg"
           >
-            <h2 className="text-xl font-semibold">{project.name}</h2>
+            <Link href={`/projects/${project.id.toString()}`}>
+              <h2 className="text-xl font-semibold">{project.name}</h2>
+            </Link>
           </li>
         ))}
       </ul>
