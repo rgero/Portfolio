@@ -1,4 +1,6 @@
 import { Course } from '../interfaces/Course';
+import CourseMarkdown from '@/data/Courses';
+import Markdown from 'react-markdown';
 import {getCourses} from '../../services/apiCourses'
 
 export default async function CoursesPage() {
@@ -7,6 +9,10 @@ export default async function CoursesPage() {
   return (
     <main className="p-6">
       <h1 className="text-3xl font-bold mb-4">Courses</h1>
+
+      <Markdown>
+        {CourseMarkdown}
+      </Markdown>
 
       <ul className="space-y-2">
         {courses.map((course: Course) => (
