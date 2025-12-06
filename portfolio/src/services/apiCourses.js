@@ -1,6 +1,6 @@
-import { SUPABASE_BUCKET_URL } from '@env';
 import supabase from "./supabase";
 
+const SUPABASE_BUCKET_URL = process.env.VITE_SUPABASE_BUCKET_URL
 const baseImageURL = `${SUPABASE_BUCKET_URL}/course_images/`
 
 export const getCourses = async () => {
