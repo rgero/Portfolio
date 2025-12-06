@@ -19,6 +19,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Portfolio - Roymond.NET",
   description: "Projects written by Roy Gero",
+  icons: {
+    icon: "favicon.png",
+    shortcut: "favicon.png"
+  },
 };
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
