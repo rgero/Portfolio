@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   title: "Portfolio - Roymond.NET",
   description: "Projects written by Roy Gero",
   icons: {
-    icon: "favicon.png",
-    shortcut: "favicon.png"
+    icon: "/favicon.png",
+    shortcut: "/favicon.png"
   },
 };
 
