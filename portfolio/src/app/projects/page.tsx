@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Project } from '../interfaces/Project';
+import ProjectListItem from '@/components/projects/ProjectListItem';
 import {getProjects} from '../../services/apiProjects'
 
 export default async function ProjectsPage() {
@@ -10,16 +11,7 @@ export default async function ProjectsPage() {
       <h1 className="text-3xl font-bold mb-4">Projects</h1>
 
       <ul className="space-y-2">
-        {projects.map((project: Project) => (
-          <li
-            key={project.id}
-            className="border p-3 rounded-lg"
-          >
-            <Link href={`/projects/${project.id.toString()}`}>
-              <h2 className="text-xl font-semibold">{project.name}</h2>
-            </Link>
-          </li>
-        ))}
+        {projects.map((project: Project) => <ProjectListItem project={project} key={project.id}/>)}
       </ul>
     </main>
   );
