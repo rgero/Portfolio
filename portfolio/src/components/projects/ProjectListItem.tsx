@@ -11,7 +11,7 @@ const ProjectListItem = ({project}: {project: Project}) => {
     >
       <Link href={`/projects/${project.id.toString()}`}>
         <div className="flex gap-4">
-          <div className="flex-1 basis-[15%] relative h-24">
+          <div className="flex-1 basis-[20%] relative h-24">
             <Image
               src={getLanguageImage(project.tags ? project.tags[0] : "undefined")}
               alt=""
