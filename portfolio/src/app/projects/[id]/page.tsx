@@ -1,5 +1,6 @@
 import { getProjectById, getProjects } from "@/services/apiProjects";
 
+import Markdown from "react-markdown";
 import { Project } from "@/app/interfaces/Project";
 
 interface SingleProjectPageProps {
@@ -15,7 +16,10 @@ const SingleProjectPage = async ({ params }: SingleProjectPageProps) => {
 
   return (
     <main>
-      {project.name}
+      <h1 className="text-3xl font-bold mb-4">{project.name}</h1>
+      <Markdown>
+        {project.description}
+      </Markdown>
     </main>
   );
 };
