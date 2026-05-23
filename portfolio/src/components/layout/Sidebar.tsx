@@ -1,8 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Code2, Gamepad2, PlayCircle, Share2 } from "lucide-react";
 import {
   NAV_ITEMS,
@@ -11,6 +8,10 @@ import {
   SOCIAL_LINKS,
   profileImageUrl,
 } from "@/lib/constants";
+
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const iconMap = {
   github: Code2,
@@ -60,7 +61,8 @@ export function Sidebar() {
       </nav>
 
       <div className="border-t border-border p-4">
-        <div className="flex justify-center gap-1">
+        {/* Adjusted gap-2 here to give the stacked items a bit more breathing room */}
+        <div className="flex justify-center gap-2">
           {SOCIAL_LINKS.map(({ href, label, icon }) => {
             const Icon = iconMap[icon];
             return (
@@ -69,10 +71,13 @@ export function Sidebar() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg p-2.5 text-text-muted transition hover:bg-accent/10 hover:text-accent"
+                className="flex flex-col items-center gap-1 rounded-lg p-2 text-text-muted transition hover:bg-accent/10 hover:text-accent min-w-14"
                 aria-label={label}
               >
                 <Icon className="size-5" />
+                <span className="text-[10px] font-medium tracking-wide capitalize">
+                  {label}
+                </span>
               </a>
             );
           })}
