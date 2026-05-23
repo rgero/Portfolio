@@ -1,0 +1,19 @@
+services:
+  needledrop:
+    image: roymond/portfolio:latest
+    env_file:
+      - .env
+    networks:
+      - container-dmz
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=container-dmz"
+      - "traefik.http.routers.portfolio.rule=Host(`roymond.net`)||Host(`www.roymond.net`)"
+      - "traefik.http.routers.portfolio.entrypoints=websecure"
+      - "traefik.http.routers.portfolio.tls.certresolver=production"
+      - "traefik.http.services.portfolio.loadbalancer.server.port=9022"
+    restart: always
+
+networks:
+  container-dmz:
+    external: true
