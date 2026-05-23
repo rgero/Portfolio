@@ -1,17 +1,37 @@
+import { PageHeader } from "@/components/layout/PageHeader";
+import { resumePdfUrl } from "@/lib/constants";
+
+export const metadata = {
+  title: "Resume",
+};
+
 export default function ResumePage() {
-  const SUPABASE_BUCKET_URL = process.env.VITE_SUPABASE_BUCKET_URL;
-  const pdfUrl = `https://docs.google.com/gview?embedded=true&url=${SUPABASE_BUCKET_URL}/files/GeroResume.pdf`;
+  const pdfDirect = resumePdfUrl();
+  const embedUrl = `https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(pdfDirect)}`;
 
   return (
-    <div className="flex flex-col items-center p-8">
-      <h1 className="text-3xl font-bold mb-6">Resume</h1>
-
-      <embed
-        src={pdfUrl}
-        type="application/pdf"
-        className="w-full rounded-xl"
-        style={{ height: "80vh" }}
+    <>
+      <PageHeader
+        title="Resume"
+        description="View or download the latest PDF."
       />
-    </div>
+      <div className="overflow-hidden rounded-xl border border-border bg-bg-card">
+        <iframe
+          src={embedUrl}
+          title="Resume"
+          className="h-[min(80vh,900px)] w-full"
+        />
+      </div>
+      <p className="mt-4 text-center text-sm text-text-muted">
+        <a
+          href={pdfDirect}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent underline underline-offset-2"
+        >
+          Open PDF directly
+        </a>
+      </p>
+    </>
   );
 }

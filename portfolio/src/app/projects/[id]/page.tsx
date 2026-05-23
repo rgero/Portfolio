@@ -1,34 +1,35 @@
-import { getProjectById, getProjects } from "@/services/apiProjects";
+import { notFound } from "next/navigation";
+import { DetailView } from "@/components/detail/DetailView";
+import { getProjectById } from "@/lib/api/projects";
 
-import Markdown from "react-markdown";
-import { Project } from "@/app/interfaces/Project";
+type Props = { params: Promise<{ id: string }> };
 
-interface SingleProjectPageProps {
-  params: {
-    id: string;
-  };
+export async function generateMetadata({ params }: Props) {
+  const { id } = await params;
+  const project = await getProjectById(id);
+  return { title: project?.name ?? "Project" };
 }
 
-const SingleProjectPage = async ({ params }: SingleProjectPageProps) => {
+export default async function ProjectDetailPage({ params }: Props) {
   const { id } = await params;
+  let project;
+  try {
+    project = await getProjectById(id);
+  } catch {
+    return (
+      <p className="text-text-muted">
+        Unable to load this project. Check your Supabase configuration.
+      </p>
+    );
+  }
 
-  const project: Project = await getProjectById(id);
+  if (!project) notFound();
 
   return (
-    <main>
-      <h1 className="text-3xl font-bold mb-4">{project.name}</h1>
-      <Markdown>
-        {project.description}
-      </Markdown>
-    </main>
+    <DetailView
+      item={project}
+      backHref="/projects"
+      backLabel="All projects"
+    />
   );
-};
-
-export default SingleProjectPage;
-
-export async function generateStaticParams() {
-  const response = await getProjects();
-  return response.map((project) => ({
-    id: project.id.toString(),
-  }));
 }

@@ -1,40 +1,16 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 export default function NotFound() {
-  const pathname = usePathname();
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    const setMounted = () => {
-      setIsMounted(true);
-    }
-    setMounted()
-  }, []);
-
   return (
-    <main className="p-10">
-      <h1 className="text-3xl font-bold mb-4">404 – Page Not Found</h1>
-
-      {isMounted && (
-        <p className="text-lg">
-          You tried to visit:{" "}
-          <code className="border-2 border-grey-800 px-2 py-1 rounded">
-            {pathname}
-          </code>
-        </p>
-      )}
-
+    <div className="py-20 text-center">
+      <h1 className="font-sans text-4xl font-bold text-text">404</h1>
+      <p className="mt-2 text-text-muted">This page does not exist.</p>
       <Link
         href="/"
-        className="mt-6 inline-block underline text-blue-600"
+        className="mt-6 inline-block text-accent underline underline-offset-2"
       >
-        Go back home
+        Back home
       </Link>
-    </main>
+    </div>
   );
 }

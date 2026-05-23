@@ -1,14 +1,41 @@
-import HomeMarkdown from "@/data/Home";
-import Markdown from "react-markdown";
+import { readFile } from "fs/promises";
+import path from "path";
+import { MarkdownContent } from "@/components/ui/MarkdownContent";
+import { SITE_NAME } from "@/lib/constants";
 
-export default function Home() {
+async function getHomeContent() {
+  const file = path.join(process.cwd(), "src/content/home.md");
+  return readFile(file, "utf-8");
+}
+
+export default async function HomePage() {
+  const content = await getHomeContent();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 dark:bg-black sm:items-start">
-        <Markdown>
-          {HomeMarkdown}
-        </Markdown>
-      </main>
+    <div>
+      <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
+        Welcome
+      </p>
+      <h1 className="mt-2 font-sans text-4xl font-bold tracking-tight text-text md:text-5xl">
+        {SITE_NAME}
+      </h1>
+      <div className="mt-8 max-w-2xl">
+        <MarkdownContent content={content} />
+      </div>
+      <div className="mt-12 flex flex-wrap gap-3">
+        <a
+          href="/projects"
+          className="rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-bg transition hover:brightness-110"
+        >
+          View projects
+        </a>
+        <a
+          href="/courses"
+          className="rounded-lg border border-border px-5 py-2.5 text-sm text-text-muted transition hover:border-accent/50 hover:text-accent"
+        >
+          Browse courses
+        </a>
+      </div>
     </div>
   );
 }

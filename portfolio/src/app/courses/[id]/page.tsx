@@ -1,30 +1,35 @@
-import { getCourseById, getCourses } from "@/services/apiCourses";
+import { notFound } from "next/navigation";
+import { DetailView } from "@/components/detail/DetailView";
+import { getCourseById } from "@/lib/api/courses";
 
-import { Course } from "@/app/interfaces/Course";
+type Props = { params: Promise<{ id: string }> };
 
-interface SingleCoursePageProps {
-  params: {
-    id: string;
-  };
+export async function generateMetadata({ params }: Props) {
+  const { id } = await params;
+  const course = await getCourseById(id);
+  return { title: course?.name ?? "Course" };
 }
 
-const SingleCoursePage = async ({ params }: SingleCoursePageProps) => {
+export default async function CourseDetailPage({ params }: Props) {
   const { id } = await params;
+  let course;
+  try {
+    course = await getCourseById(id);
+  } catch {
+    return (
+      <p className="text-text-muted">
+        Unable to load this course. Check your Supabase configuration.
+      </p>
+    );
+  }
 
-  const course: Course = await getCourseById(id);
+  if (!course) notFound();
 
   return (
-    <main>
-      {course.name}
-    </main>
+    <DetailView
+      item={course}
+      backHref="/courses"
+      backLabel="All courses"
+    />
   );
-};
-
-export default SingleCoursePage;
-
-export async function generateStaticParams() {
-  const response = await getCourses();
-  return response.map((course) => ({
-    id: course.id.toString(),
-  }));
 }
