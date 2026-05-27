@@ -1,5 +1,5 @@
 export const SITE_NAME = "Roymond.NET";
-export const SITE_TAGLINE = "Creative technologist & lifelong learner";
+export const SITE_TAGLINE = "Amateur Hockey player & lifelong learner";
 
 export const SOCIAL_LINKS = [
   { label: "GitHub", href: "https://github.com/rgero", icon: "github" as const },
