@@ -1,9 +1,11 @@
-import { readFile } from "fs/promises";
-import path from "path";
 import { CourseListClient } from "@/components/courses/CourseListClient";
-import { PageHeader } from "@/components/layout/PageHeader";
 import { MarkdownContent } from "@/components/ui/MarkdownContent";
+import { PageHeader } from "@/components/layout/PageHeader";
 import { getCourses } from "@/lib/api/courses";
+import path from "path";
+import { readFile } from "fs/promises";
+
+export const revalidate = 1800; // Revalidate every 30 minutes
 
 export const metadata = {
   title: "Courses",

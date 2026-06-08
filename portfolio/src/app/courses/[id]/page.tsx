@@ -1,6 +1,8 @@
-import { notFound } from "next/navigation";
 import { DetailView } from "@/components/detail/DetailView";
 import { getCourseById } from "@/lib/api/courses";
+import { notFound } from "next/navigation";
+
+export const revalidate = 1800; // Revalidate every 30 minutes
 
 type Props = { params: Promise<{ id: string }> };
 

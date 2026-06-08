@@ -1,6 +1,8 @@
-import { ProjectListClient } from "@/components/projects/ProjectListClient";
 import { PageHeader } from "@/components/layout/PageHeader";
+import { ProjectListClient } from "@/components/projects/ProjectListClient";
 import { getProjects } from "@/lib/api/projects";
+
+export const revalidate = 1800; // Revalidate every 30 minutes
 
 export const metadata = {
   title: "Projects",
